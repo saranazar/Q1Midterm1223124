@@ -3,6 +3,7 @@ package com.example.q1midterm1223124
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,6 +21,13 @@ class Q3Welcome : AppCompatActivity() {
         }
 
         val btn1: Button = findViewById(R.id.homebtn)
+
+        val bundle: Bundle?=intent.extras
+
+        bundle?.let{
+            val message = bundle.getString("key")
+            Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+        }
 
 
         btn1.setOnClickListener{
